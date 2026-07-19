@@ -491,7 +491,7 @@ h2 {
 .site-foot .top-border { height: 14px; background: var(--meander) repeat-x; background-size: 20px 14px; opacity: 0.6; }
 .site-foot .wrap {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
   gap: 40px;
   padding-top: 56px;
   padding-bottom: 44px;
@@ -572,3 +572,93 @@ h2 {
   .site-foot .wrap { grid-template-columns: 1fr; }
   .event-feature .info { padding: 30px 24px; }
 }
+
+/* ---------- nav dropdowns (2026-07-19 full-parity expansion) ---------- */
+.nav-group { position: relative; }
+.nav-group__btn {
+  font: inherit; font-weight: 500; color: var(--body-c);
+  background: none; border: 0; cursor: pointer; padding: 6px 0;
+  display: inline-flex; align-items: center; gap: 5px;
+}
+.nav-group__btn:hover { color: var(--aegean); }
+.nav-group__btn .caret { font-size: 0.7em; transform: translateY(1px); }
+.nav-drop {
+  display: none; position: absolute; top: calc(100% + 10px); left: -14px;
+  min-width: 210px; background: var(--paper); border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 14px 34px rgba(16, 30, 51, 0.16);
+  padding: 10px 0; z-index: 40;
+}
+.nav-drop a { display: block; padding: 8px 18px; }
+.nav-drop a:hover { background: var(--porcelain); }
+.nav-group:hover .nav-drop,
+.nav-group:focus-within .nav-drop,
+.nav-group__btn[aria-expanded="true"] + .nav-drop { display: block; }
+@media (max-width: 680px) {
+  .nav-group { width: 100%; }
+  .nav-drop { position: static; box-shadow: none; border: 0;
+    border-left: 3px solid var(--honey); border-radius: 0; padding: 4px 0 4px 14px; }
+  .nav-group:hover .nav-drop { display: none; }
+  .nav-group__btn[aria-expanded="true"] + .nav-drop { display: block; }
+}
+/* -- policy pages: numbered rule lists inside .notes cards -- */
+.notes ol { margin: 14px 0 0 18px; display: grid; gap: 10px; font-size: 0.97rem; }
+.people-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 22px; margin-top: 34px; }
+.person { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 26px 22px; text-align: center; }
+.person__avatar { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 14px; display: grid; place-items: center; background: var(--honey); color: var(--ink); font-family: "GFS Didot", serif; font-size: 1.6rem; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 34px; }
+.gallery-grid img { width: 100%; height: 240px; object-fit: cover; border-radius: 12px; display: block; }
+@media (max-width: 640px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } .gallery-grid img { height: 150px; } }
+
+/* ---------- term dates table ---------- */
+.term-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.term-table th, .term-table td { padding: 16px 22px; text-align: left; vertical-align: top; }
+.term-table thead th {
+  background: var(--aegean);
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.term-table tbody th { font-weight: 700; color: var(--ink); white-space: nowrap; }
+.term-table tbody tr { border-top: 1px solid var(--line); }
+.term-table tbody tr:hover { background: var(--porcelain); }
+.term-table td.closed,
+.term-table tr.closed th, .term-table tr.closed td {
+  background: rgba(232, 169, 60, 0.14);
+  border-left: 3px solid var(--honey);
+  color: var(--honey-deep);
+  font-weight: 700;
+}
+.term-table + p.small, .term-block-note { margin-top: 16px; font-size: 0.9rem; color: var(--muted); }
+
+/* ---------- forms ---------- */
+.form-card { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 34px; max-width: 760px; margin: 34px auto 0; box-shadow: 0 10px 30px rgba(16, 30, 51, 0.10); }
+.form-card fieldset { border: 0; padding: 0; margin: 0 0 26px; }
+.form-card legend { font-family: "GFS Didot", serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 14px; }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
+.field input, .field select, .field textarea { width: 100%; padding: 11px 13px; border: 1px solid var(--line); border-radius: 9px; font: inherit; background: var(--porcelain); }
+.field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--sea); background: #fff; }
+.field--row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 640px) { .field--row { grid-template-columns: 1fr; } }
+.form-note { font-size: 0.9rem; color: var(--muted); margin-top: 10px; }
+
+.field-group { margin-bottom: 22px; }
+.field-group .field-label { display: block; font-weight: 700; margin-bottom: 8px; color: var(--ink); }
+.field-group .field:last-child { margin-bottom: 0; }
+.radio-group { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; }
+.radio-group input[type="radio"], .radio-group input[type="checkbox"] { width: auto; margin-right: 6px; }
+.radio-group label { display: inline; font-weight: 400; margin-bottom: 0; color: var(--body-c); }
+.radio-group--stacked { flex-direction: column; align-items: flex-start; gap: 10px; }
+.field--row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+@media (max-width: 640px) { .field--row-3 { grid-template-columns: 1fr; } }
+.form-card .notes, .form-card .bank { margin-top: 4px; margin-bottom: 26px; }
+.form-card .notes h3, .form-card .bank h3, .form-card .notes p.field-label { font-family: "GFS Didot", serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 10px; }
