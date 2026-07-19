@@ -931,6 +931,7 @@
           </div>
           <div class="field-group">
             <p class="field-label" id="religious-events-label">Some events may include Greek Christian traditions (e.g. Easter, Christmas etc). Please indicate your preference: <span aria-hidden="true">*</span></p>
+            <!-- checkbox groups: 'required' on the first box only, simulating at-least-one-selected — HTML has no native checkbox-group validation -->
             <div class="radio-group" role="group" aria-labelledby="religious-events-label">
               <input type="checkbox" id="religious-consent-yes" name="religious_events_consent" value="I consent to my child taking part in these events" required>
               <label for="religious-consent-yes">I consent to my child taking part in these events</label>
@@ -961,6 +962,7 @@
           <legend>Fees</legend>
           <div class="field-group">
             <p class="field-label" id="fees-label">Fees: <span aria-hidden="true">*</span></p>
+            <!-- checkbox groups: 'required' on the first box only, simulating at-least-one-selected — HTML has no native checkbox-group validation -->
             <div class="radio-group radio-group--stacked" role="group" aria-labelledby="fees-label">
               <input type="checkbox" id="fee-1" name="fees" value="One Child (Nursery to Year 6) - £400.00" required>
               <label for="fee-1">One Child (Nursery to Year 6) - £400.00</label>
