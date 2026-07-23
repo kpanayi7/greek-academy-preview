@@ -645,8 +645,10 @@ h2 {
 .form-card legend { font-family: "GFS Didot", serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 14px; }
 .field { margin-bottom: 16px; }
 .field label { display: block; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
-.field input, .field select, .field textarea { width: 100%; padding: 11px 13px; border: 1px solid var(--line); border-radius: 9px; font: inherit; background: var(--porcelain); }
-.field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--sea); background: #fff; }
+.field input, .field select, .field textarea,
+.field-group textarea, .field-group input[type="file"] { width: 100%; padding: 11px 13px; border: 1px solid var(--line); border-radius: 9px; font: inherit; background: var(--porcelain); }
+.field input:focus, .field select:focus, .field textarea:focus,
+.field-group textarea:focus { outline: 2px solid var(--sea); background: #fff; }
 .field--row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 @media (max-width: 640px) { .field--row { grid-template-columns: 1fr; } }
 .form-note { font-size: 0.9rem; color: var(--muted); margin-top: 10px; }
