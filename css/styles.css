@@ -470,6 +470,7 @@ h2 {
   box-shadow: var(--shadow-lg);
 }
 .bank h3 { font-family: var(--display); font-weight: 400; font-size: 1.4rem; color: #fff; }
+.bank h4 { color: #fff; }
 .bank dl { margin-top: 16px; display: grid; gap: 12px; }
 .bank dt { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8FA8CC; }
 .bank dd { font-size: 1.1rem; color: #fff; font-weight: 700; }
@@ -660,6 +661,8 @@ h2 {
 .radio-group input[type="radio"], .radio-group input[type="checkbox"] { width: auto; margin-right: 6px; }
 .radio-group label { display: inline; font-weight: 400; margin-bottom: 0; color: var(--body-c); }
 .radio-group--stacked { flex-direction: column; align-items: flex-start; gap: 10px; }
+.radio-group--stacked + .hint { margin-top: 16px; }
+.form-card button[type="submit"] { margin-top: 22px; }
 .field--row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
 @media (max-width: 640px) { .field--row-3 { grid-template-columns: 1fr; } }
 .form-card .notes, .form-card .bank { margin-top: 4px; margin-bottom: 26px; }
