@@ -75,7 +75,7 @@
   <div class="wrap reveal">
     <div class="eyebrow"><span class="el">Καλό να ξέρετε</span> Before you start</div>
     <h2>Two weeks free, then one annual fee.</h2>
-    <p class="section-intro">2026/27 fees run from £400.00 for one child (Nursery to Year 6) up to £1,415.00 for three GCSE-age children, and cover the full academic year including textbooks. New children get a complimentary two-week trial before any fee is due. Payment dates for 2026/27 are being finalised. Full fee table, payment terms and bank details are on the <a href="enrolment.html">Enrolment &amp; fees</a> page.</p>
+    <p class="section-intro">2026/27 fees run from £400.00 for one child (Nursery to Year 6) up to £1,415.00 for three GCSE-age children, and cover the full academic year including textbooks. New children get a complimentary two-week trial before any fee is due. Fees can be paid in full by Friday 28 August 2026, or in two instalments — the first by Friday 28 August 2026 and the second by Tuesday 5 January 2027. Full fee table, payment terms and bank details are on the <a href="enrolment.html">Enrolment &amp; fees</a> page.</p>
   </div>
 </section>
 
@@ -84,37 +84,26 @@
     <div class="eyebrow"><span class="el">Η αίτηση</span> Registration form</div>
     <h2>The Greek Academy Registration Form 2026/27.</h2>
     <div class="form-card">
-      <form action="#" method="post">
+      <form action="submit.php" method="post" enctype="multipart/form-data">
+        <div class="hp-field" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
         <fieldset>
           <legend>Child details</legend>
-          <div class="field-group">
-            <p class="field-label" id="new-to-tga-label">New to The Greek Academy: <span aria-hidden="true">*</span></p>
-            <div class="radio-group" role="group" aria-labelledby="new-to-tga-label">
-              <input type="radio" id="new-to-tga-yes" name="new_to_academy" value="Yes" required>
-              <label for="new-to-tga-yes">Yes</label>
-              <input type="radio" id="new-to-tga-no" name="new_to_academy" value="No">
-              <label for="new-to-tga-no">No</label>
+          <div class="field--row">
+            <div class="field">
+              <label class="field-label" for="child1-name-first">First name <span aria-hidden="true">*</span></label>
+              <input type="text" id="child1-name-first" name="child1_name_first" required>
+            </div>
+            <div class="field">
+              <label class="field-label" for="child1-name-last">Last name <span aria-hidden="true">*</span></label>
+              <input type="text" id="child1-name-last" name="child1_name_last" required>
             </div>
           </div>
           <div class="field-group">
-              <p class="field-label">Name of child: <span aria-hidden="true">*</span></p>
-              <div class="field--row">
+              <p class="field-label" id="child1-dob-label">Date of Birth <span aria-hidden="true">*</span></p>
+              <div class="field--row field--row-3" role="group" aria-labelledby="child1-dob-label">
                 <div class="field">
-                  <label for="child-first">First name</label>
-                  <input type="text" id="child-first" name="child_name_first" required>
-                </div>
-                <div class="field">
-                  <label for="child-last">Last name</label>
-                  <input type="text" id="child-last" name="child_name_last" required>
-                </div>
-              </div>
-            </div>
-          <div class="field-group">
-              <p class="field-label" id="child-dob-label">Date of Birth <span aria-hidden="true">*</span></p>
-              <div class="field--row field--row-3" role="group" aria-labelledby="child-dob-label">
-                <div class="field">
-                  <label for="child-dob-day">Day</label>
-                  <select id="child-dob-day" name="child_dob_day" required>
+                  <label for="child1-dob-day">Day</label>
+                  <select id="child1-dob-day" name="child1_dob_day" required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -149,8 +138,8 @@
                   </select>
                 </div>
                 <div class="field">
-                  <label for="child-dob-month">Month</label>
-                  <select id="child-dob-month" name="child_dob_month" required>
+                  <label for="child1-dob-month">Month</label>
+                  <select id="child1-dob-month" name="child1_dob_month" required>
               <option value="1">January</option>
               <option value="2">February</option>
               <option value="3">March</option>
@@ -166,8 +155,8 @@
                   </select>
                 </div>
                 <div class="field">
-                  <label for="child-dob-year">Year</label>
-                  <select id="child-dob-year" name="child_dob_year" required>
+                  <label for="child1-dob-year">Year</label>
+                  <select id="child1-dob-year" name="child1_dob_year" required>
               <option value="2027">2027</option>
               <option value="2026">2026</option>
               <option value="2025">2025</option>
@@ -280,6 +269,55 @@
                 </div>
               </div>
             </div>
+          <div class="field-group">
+            <p class="field-label" id="child1-new-label">Is this child new to The Greek Academy? <span aria-hidden="true">*</span></p>
+            <div class="radio-group" role="radiogroup" aria-labelledby="child1-new-label">
+              <input type="radio" id="child1-new-yes" name="child1_new_to_academy" value="Yes" required>
+              <label for="child1-new-yes">Yes — joining for the first time</label>
+              <input type="radio" id="child1-new-no" name="child1_new_to_academy" value="No" required>
+              <label for="child1-new-no">No — returning pupil</label>
+            </div>
+          </div>
+          <div class="field--row returning-only" data-child="1" hidden>
+            <div class="field">
+              <label class="field-label" for="child1-current-class">Current class (25/26) <span aria-hidden="true">*</span></label>
+              <input type="text" id="child1-current-class" name="child1_current_class" data-req>
+            </div>
+            <div class="field">
+              <label class="field-label" for="child1-current-teacher">Current teacher (25/26) <span aria-hidden="true">*</span></label>
+              <input type="text" id="child1-current-teacher" name="child1_current_teacher" data-req>
+            </div>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="child1-medical">Medical conditions <span aria-hidden="true">*</span></label>
+            <textarea id="child1-medical" name="child1_medical" rows="3" required></textarea>
+            <p class="hint">Please specify any medication required during school hours or any medication the child may have on their belongings, such as EpiPens. If none, write "None".</p>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="child1-sen">Special educational needs (SEN) <span aria-hidden="true">*</span></label>
+            <textarea id="child1-sen" name="child1_sen" rows="3" required></textarea>
+            <p class="hint">If none, write "None".</p>
+          </div>
+          <div class="field-group">
+            <p class="field-label" id="child1-allergy-label">Does this child have a food allergy, or another allergy requiring immediate awareness? <span aria-hidden="true">*</span></p>
+            <div class="radio-group" role="radiogroup" aria-labelledby="child1-allergy-label">
+              <input type="radio" id="child1-allergy-yes" name="child1_has_allergy" value="Yes" required>
+              <label for="child1-allergy-yes">Yes</label>
+              <input type="radio" id="child1-allergy-no" name="child1_has_allergy" value="No" required>
+              <label for="child1-allergy-no">No</label>
+            </div>
+          </div>
+          <div class="allergy-only" data-child="1" hidden>
+            <div class="field-group">
+              <label class="field-label" for="child1-allergies">Allergy details <span aria-hidden="true">*</span></label>
+              <textarea id="child1-allergies" name="child1_allergies" rows="3" data-req></textarea>
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="child1-photo">Child's photo <span aria-hidden="true">*</span></label>
+              <input type="file" id="child1-photo" name="child1_photo" data-req accept=".jpg,.jpeg,.png,.heic,.heif,image/jpeg,image/png,image/heic,image/heif">
+              <p class="hint">IMPORTANT: Where a child has a food allergy or another allergy requiring immediate awareness, please upload a recent photograph. The photograph may be printed and shared with relevant teachers and authorised volunteers, including those assisting at the tuck shop, so that they can identify the child quickly and reduce the risk of accidental exposure. This is particularly important for younger children who may not recognise or communicate their allergies themselves. JPG, PNG or iPhone (HEIC) photo, up to 10MB. Stored securely and used for identification purposes only.</p>
+            </div>
+          </div>
           <div class="field-group">
             <p class="field-label">Address: <span aria-hidden="true">*</span></p>
             <div class="field">
@@ -509,6 +547,475 @@
             </div>
           </div>
         </fieldset>
+        <fieldset id="child2-section" hidden>
+          <legend>Second child</legend>
+          <p><button type="button" class="link-button remove-child" data-child="2">Remove this child</button></p>
+          <div class="field--row">
+            <div class="field">
+              <label class="field-label" for="child2-name-first">First name <span aria-hidden="true">*</span></label>
+              <input type="text" id="child2-name-first" name="child2_name_first" data-req>
+            </div>
+            <div class="field">
+              <label class="field-label" for="child2-name-last">Last name <span aria-hidden="true">*</span></label>
+              <input type="text" id="child2-name-last" name="child2_name_last" data-req>
+            </div>
+          </div>
+          <div class="field-group">
+              <p class="field-label" id="child2-dob-label">Date of Birth <span aria-hidden="true">*</span></p>
+              <div class="field--row field--row-3" role="group" aria-labelledby="child2-dob-label">
+                <div class="field">
+                  <label for="child2-dob-day">Day</label>
+                  <select id="child2-dob-day" name="child2_dob_day" data-req>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="child2-dob-month">Month</label>
+                  <select id="child2-dob-month" name="child2_dob_month" data-req>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="child2-dob-year">Year</label>
+                  <select id="child2-dob-year" name="child2_dob_year" data-req>
+              <option value="2027">2027</option>
+              <option value="2026">2026</option>
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016</option>
+              <option value="2015">2015</option>
+              <option value="2014">2014</option>
+              <option value="2013">2013</option>
+              <option value="2012">2012</option>
+              <option value="2011">2011</option>
+              <option value="2010">2010</option>
+              <option value="2009">2009</option>
+              <option value="2008">2008</option>
+              <option value="2007">2007</option>
+              <option value="2006">2006</option>
+              <option value="2005">2005</option>
+              <option value="2004">2004</option>
+              <option value="2003">2003</option>
+              <option value="2002">2002</option>
+              <option value="2001">2001</option>
+              <option value="2000">2000</option>
+              <option value="1999">1999</option>
+              <option value="1998">1998</option>
+              <option value="1997">1997</option>
+              <option value="1996">1996</option>
+              <option value="1995">1995</option>
+              <option value="1994">1994</option>
+              <option value="1993">1993</option>
+              <option value="1992">1992</option>
+              <option value="1991">1991</option>
+              <option value="1990">1990</option>
+              <option value="1989">1989</option>
+              <option value="1988">1988</option>
+              <option value="1987">1987</option>
+              <option value="1986">1986</option>
+              <option value="1985">1985</option>
+              <option value="1984">1984</option>
+              <option value="1983">1983</option>
+              <option value="1982">1982</option>
+              <option value="1981">1981</option>
+              <option value="1980">1980</option>
+              <option value="1979">1979</option>
+              <option value="1978">1978</option>
+              <option value="1977">1977</option>
+              <option value="1976">1976</option>
+              <option value="1975">1975</option>
+              <option value="1974">1974</option>
+              <option value="1973">1973</option>
+              <option value="1972">1972</option>
+              <option value="1971">1971</option>
+              <option value="1970">1970</option>
+              <option value="1969">1969</option>
+              <option value="1968">1968</option>
+              <option value="1967">1967</option>
+              <option value="1966">1966</option>
+              <option value="1965">1965</option>
+              <option value="1964">1964</option>
+              <option value="1963">1963</option>
+              <option value="1962">1962</option>
+              <option value="1961">1961</option>
+              <option value="1960">1960</option>
+              <option value="1959">1959</option>
+              <option value="1958">1958</option>
+              <option value="1957">1957</option>
+              <option value="1956">1956</option>
+              <option value="1955">1955</option>
+              <option value="1954">1954</option>
+              <option value="1953">1953</option>
+              <option value="1952">1952</option>
+              <option value="1951">1951</option>
+              <option value="1950">1950</option>
+              <option value="1949">1949</option>
+              <option value="1948">1948</option>
+              <option value="1947">1947</option>
+              <option value="1946">1946</option>
+              <option value="1945">1945</option>
+              <option value="1944">1944</option>
+              <option value="1943">1943</option>
+              <option value="1942">1942</option>
+              <option value="1941">1941</option>
+              <option value="1940">1940</option>
+              <option value="1939">1939</option>
+              <option value="1938">1938</option>
+              <option value="1937">1937</option>
+              <option value="1936">1936</option>
+              <option value="1935">1935</option>
+              <option value="1934">1934</option>
+              <option value="1933">1933</option>
+              <option value="1932">1932</option>
+              <option value="1931">1931</option>
+              <option value="1930">1930</option>
+              <option value="1929">1929</option>
+              <option value="1928">1928</option>
+              <option value="1927">1927</option>
+              <option value="1926">1926</option>
+              <option value="1925">1925</option>
+              <option value="1924">1924</option>
+              <option value="1923">1923</option>
+              <option value="1922">1922</option>
+              <option value="1921">1921</option>
+              <option value="1920">1920</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          <div class="field-group">
+            <p class="field-label" id="child2-new-label">Is this child new to The Greek Academy? <span aria-hidden="true">*</span></p>
+            <div class="radio-group" role="radiogroup" aria-labelledby="child2-new-label">
+              <input type="radio" id="child2-new-yes" name="child2_new_to_academy" value="Yes" data-req>
+              <label for="child2-new-yes">Yes — joining for the first time</label>
+              <input type="radio" id="child2-new-no" name="child2_new_to_academy" value="No" data-req>
+              <label for="child2-new-no">No — returning pupil</label>
+            </div>
+          </div>
+          <div class="field--row returning-only" data-child="2" hidden>
+            <div class="field">
+              <label class="field-label" for="child2-current-class">Current class (25/26) <span aria-hidden="true">*</span></label>
+              <input type="text" id="child2-current-class" name="child2_current_class" data-req>
+            </div>
+            <div class="field">
+              <label class="field-label" for="child2-current-teacher">Current teacher (25/26) <span aria-hidden="true">*</span></label>
+              <input type="text" id="child2-current-teacher" name="child2_current_teacher" data-req>
+            </div>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="child2-medical">Medical conditions <span aria-hidden="true">*</span></label>
+            <textarea id="child2-medical" name="child2_medical" rows="3" data-req></textarea>
+            <p class="hint">Please specify any medication required during school hours or any medication the child may have on their belongings, such as EpiPens. If none, write "None".</p>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="child2-sen">Special educational needs (SEN) <span aria-hidden="true">*</span></label>
+            <textarea id="child2-sen" name="child2_sen" rows="3" data-req></textarea>
+            <p class="hint">If none, write "None".</p>
+          </div>
+          <div class="field-group">
+            <p class="field-label" id="child2-allergy-label">Does this child have a food allergy, or another allergy requiring immediate awareness? <span aria-hidden="true">*</span></p>
+            <div class="radio-group" role="radiogroup" aria-labelledby="child2-allergy-label">
+              <input type="radio" id="child2-allergy-yes" name="child2_has_allergy" value="Yes" data-req>
+              <label for="child2-allergy-yes">Yes</label>
+              <input type="radio" id="child2-allergy-no" name="child2_has_allergy" value="No" data-req>
+              <label for="child2-allergy-no">No</label>
+            </div>
+          </div>
+          <div class="allergy-only" data-child="2" hidden>
+            <div class="field-group">
+              <label class="field-label" for="child2-allergies">Allergy details <span aria-hidden="true">*</span></label>
+              <textarea id="child2-allergies" name="child2_allergies" rows="3" data-req></textarea>
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="child2-photo">Child's photo <span aria-hidden="true">*</span></label>
+              <input type="file" id="child2-photo" name="child2_photo" data-req accept=".jpg,.jpeg,.png,.heic,.heif,image/jpeg,image/png,image/heic,image/heif">
+              <p class="hint">IMPORTANT: Where a child has a food allergy or another allergy requiring immediate awareness, please upload a recent photograph. The photograph may be printed and shared with relevant teachers and authorised volunteers, including those assisting at the tuck shop, so that they can identify the child quickly and reduce the risk of accidental exposure. This is particularly important for younger children who may not recognise or communicate their allergies themselves. JPG, PNG or iPhone (HEIC) photo, up to 10MB. Stored securely and used for identification purposes only.</p>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset id="child3-section" hidden>
+          <legend>Third child</legend>
+          <p><button type="button" class="link-button remove-child" data-child="3">Remove this child</button></p>
+          <div class="field--row">
+            <div class="field">
+              <label class="field-label" for="child3-name-first">First name <span aria-hidden="true">*</span></label>
+              <input type="text" id="child3-name-first" name="child3_name_first" data-req>
+            </div>
+            <div class="field">
+              <label class="field-label" for="child3-name-last">Last name <span aria-hidden="true">*</span></label>
+              <input type="text" id="child3-name-last" name="child3_name_last" data-req>
+            </div>
+          </div>
+          <div class="field-group">
+              <p class="field-label" id="child3-dob-label">Date of Birth <span aria-hidden="true">*</span></p>
+              <div class="field--row field--row-3" role="group" aria-labelledby="child3-dob-label">
+                <div class="field">
+                  <label for="child3-dob-day">Day</label>
+                  <select id="child3-dob-day" name="child3_dob_day" data-req>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="child3-dob-month">Month</label>
+                  <select id="child3-dob-month" name="child3_dob_month" data-req>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="child3-dob-year">Year</label>
+                  <select id="child3-dob-year" name="child3_dob_year" data-req>
+              <option value="2027">2027</option>
+              <option value="2026">2026</option>
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016</option>
+              <option value="2015">2015</option>
+              <option value="2014">2014</option>
+              <option value="2013">2013</option>
+              <option value="2012">2012</option>
+              <option value="2011">2011</option>
+              <option value="2010">2010</option>
+              <option value="2009">2009</option>
+              <option value="2008">2008</option>
+              <option value="2007">2007</option>
+              <option value="2006">2006</option>
+              <option value="2005">2005</option>
+              <option value="2004">2004</option>
+              <option value="2003">2003</option>
+              <option value="2002">2002</option>
+              <option value="2001">2001</option>
+              <option value="2000">2000</option>
+              <option value="1999">1999</option>
+              <option value="1998">1998</option>
+              <option value="1997">1997</option>
+              <option value="1996">1996</option>
+              <option value="1995">1995</option>
+              <option value="1994">1994</option>
+              <option value="1993">1993</option>
+              <option value="1992">1992</option>
+              <option value="1991">1991</option>
+              <option value="1990">1990</option>
+              <option value="1989">1989</option>
+              <option value="1988">1988</option>
+              <option value="1987">1987</option>
+              <option value="1986">1986</option>
+              <option value="1985">1985</option>
+              <option value="1984">1984</option>
+              <option value="1983">1983</option>
+              <option value="1982">1982</option>
+              <option value="1981">1981</option>
+              <option value="1980">1980</option>
+              <option value="1979">1979</option>
+              <option value="1978">1978</option>
+              <option value="1977">1977</option>
+              <option value="1976">1976</option>
+              <option value="1975">1975</option>
+              <option value="1974">1974</option>
+              <option value="1973">1973</option>
+              <option value="1972">1972</option>
+              <option value="1971">1971</option>
+              <option value="1970">1970</option>
+              <option value="1969">1969</option>
+              <option value="1968">1968</option>
+              <option value="1967">1967</option>
+              <option value="1966">1966</option>
+              <option value="1965">1965</option>
+              <option value="1964">1964</option>
+              <option value="1963">1963</option>
+              <option value="1962">1962</option>
+              <option value="1961">1961</option>
+              <option value="1960">1960</option>
+              <option value="1959">1959</option>
+              <option value="1958">1958</option>
+              <option value="1957">1957</option>
+              <option value="1956">1956</option>
+              <option value="1955">1955</option>
+              <option value="1954">1954</option>
+              <option value="1953">1953</option>
+              <option value="1952">1952</option>
+              <option value="1951">1951</option>
+              <option value="1950">1950</option>
+              <option value="1949">1949</option>
+              <option value="1948">1948</option>
+              <option value="1947">1947</option>
+              <option value="1946">1946</option>
+              <option value="1945">1945</option>
+              <option value="1944">1944</option>
+              <option value="1943">1943</option>
+              <option value="1942">1942</option>
+              <option value="1941">1941</option>
+              <option value="1940">1940</option>
+              <option value="1939">1939</option>
+              <option value="1938">1938</option>
+              <option value="1937">1937</option>
+              <option value="1936">1936</option>
+              <option value="1935">1935</option>
+              <option value="1934">1934</option>
+              <option value="1933">1933</option>
+              <option value="1932">1932</option>
+              <option value="1931">1931</option>
+              <option value="1930">1930</option>
+              <option value="1929">1929</option>
+              <option value="1928">1928</option>
+              <option value="1927">1927</option>
+              <option value="1926">1926</option>
+              <option value="1925">1925</option>
+              <option value="1924">1924</option>
+              <option value="1923">1923</option>
+              <option value="1922">1922</option>
+              <option value="1921">1921</option>
+              <option value="1920">1920</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          <div class="field-group">
+            <p class="field-label" id="child3-new-label">Is this child new to The Greek Academy? <span aria-hidden="true">*</span></p>
+            <div class="radio-group" role="radiogroup" aria-labelledby="child3-new-label">
+              <input type="radio" id="child3-new-yes" name="child3_new_to_academy" value="Yes" data-req>
+              <label for="child3-new-yes">Yes — joining for the first time</label>
+              <input type="radio" id="child3-new-no" name="child3_new_to_academy" value="No" data-req>
+              <label for="child3-new-no">No — returning pupil</label>
+            </div>
+          </div>
+          <div class="field--row returning-only" data-child="3" hidden>
+            <div class="field">
+              <label class="field-label" for="child3-current-class">Current class (25/26) <span aria-hidden="true">*</span></label>
+              <input type="text" id="child3-current-class" name="child3_current_class" data-req>
+            </div>
+            <div class="field">
+              <label class="field-label" for="child3-current-teacher">Current teacher (25/26) <span aria-hidden="true">*</span></label>
+              <input type="text" id="child3-current-teacher" name="child3_current_teacher" data-req>
+            </div>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="child3-medical">Medical conditions <span aria-hidden="true">*</span></label>
+            <textarea id="child3-medical" name="child3_medical" rows="3" data-req></textarea>
+            <p class="hint">Please specify any medication required during school hours or any medication the child may have on their belongings, such as EpiPens. If none, write "None".</p>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="child3-sen">Special educational needs (SEN) <span aria-hidden="true">*</span></label>
+            <textarea id="child3-sen" name="child3_sen" rows="3" data-req></textarea>
+            <p class="hint">If none, write "None".</p>
+          </div>
+          <div class="field-group">
+            <p class="field-label" id="child3-allergy-label">Does this child have a food allergy, or another allergy requiring immediate awareness? <span aria-hidden="true">*</span></p>
+            <div class="radio-group" role="radiogroup" aria-labelledby="child3-allergy-label">
+              <input type="radio" id="child3-allergy-yes" name="child3_has_allergy" value="Yes" data-req>
+              <label for="child3-allergy-yes">Yes</label>
+              <input type="radio" id="child3-allergy-no" name="child3_has_allergy" value="No" data-req>
+              <label for="child3-allergy-no">No</label>
+            </div>
+          </div>
+          <div class="allergy-only" data-child="3" hidden>
+            <div class="field-group">
+              <label class="field-label" for="child3-allergies">Allergy details <span aria-hidden="true">*</span></label>
+              <textarea id="child3-allergies" name="child3_allergies" rows="3" data-req></textarea>
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="child3-photo">Child's photo <span aria-hidden="true">*</span></label>
+              <input type="file" id="child3-photo" name="child3_photo" data-req accept=".jpg,.jpeg,.png,.heic,.heif,image/jpeg,image/png,image/heic,image/heif">
+              <p class="hint">IMPORTANT: Where a child has a food allergy or another allergy requiring immediate awareness, please upload a recent photograph. The photograph may be printed and shared with relevant teachers and authorised volunteers, including those assisting at the tuck shop, so that they can identify the child quickly and reduce the risk of accidental exposure. This is particularly important for younger children who may not recognise or communicate their allergies themselves. JPG, PNG or iPhone (HEIC) photo, up to 10MB. Stored securely and used for identification purposes only.</p>
+            </div>
+          </div>
+        </fieldset>
+        <p><button type="button" id="add-child" class="btn btn--secondary">+ Add another child</button></p>
         <fieldset>
           <legend>Parent/Guardian 1</legend>
           <div class="field-group">
@@ -558,385 +1065,20 @@
           </div>
         </fieldset>
         <fieldset>
-          <legend>Additional children</legend>
+          <legend>Emergency contact</legend>
+          <p class="section-intro">Someone we can call if we cannot reach a parent/guardian.</p>
           <div class="field">
-            <label for="siblings-count">Number of Siblings to enrol:</label>
-            <select id="siblings-count" name="siblings_count" required>
-              <option value="">--- Select Choice ---</option>
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-            </select>
+            <label class="field-label" for="emergency-contact-name">Full name <span aria-hidden="true">*</span></label>
+            <input type="text" id="emergency-contact-name" name="emergency_contact_name" required>
           </div>
-          <div class="field">
-            <label for="child2-name">Second Child's Full Name:</label>
-            <input type="text" id="child2-name" name="child2_name" required>
-          </div>
-          <div class="field-group">
-              <p class="field-label" id="child2-dob-label">Second Child's Date of Birth <span aria-hidden="true">*</span></p>
-              <div class="field--row field--row-3" role="group" aria-labelledby="child2-dob-label">
-                <div class="field">
-                  <label for="child2-dob-day">Day</label>
-                  <select id="child2-dob-day" name="child2_dob_day" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="child2-dob-month">Month</label>
-                  <select id="child2-dob-month" name="child2_dob_month" required>
-              <option value="1">January</option>
-              <option value="2">February</option>
-              <option value="3">March</option>
-              <option value="4">April</option>
-              <option value="5">May</option>
-              <option value="6">June</option>
-              <option value="7">July</option>
-              <option value="8">August</option>
-              <option value="9">September</option>
-              <option value="10">October</option>
-              <option value="11">November</option>
-              <option value="12">December</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="child2-dob-year">Year</label>
-                  <select id="child2-dob-year" name="child2_dob_year" required>
-              <option value="2027">2027</option>
-              <option value="2026">2026</option>
-              <option value="2025">2025</option>
-              <option value="2024">2024</option>
-              <option value="2023">2023</option>
-              <option value="2022">2022</option>
-              <option value="2021">2021</option>
-              <option value="2020">2020</option>
-              <option value="2019">2019</option>
-              <option value="2018">2018</option>
-              <option value="2017">2017</option>
-              <option value="2016">2016</option>
-              <option value="2015">2015</option>
-              <option value="2014">2014</option>
-              <option value="2013">2013</option>
-              <option value="2012">2012</option>
-              <option value="2011">2011</option>
-              <option value="2010">2010</option>
-              <option value="2009">2009</option>
-              <option value="2008">2008</option>
-              <option value="2007">2007</option>
-              <option value="2006">2006</option>
-              <option value="2005">2005</option>
-              <option value="2004">2004</option>
-              <option value="2003">2003</option>
-              <option value="2002">2002</option>
-              <option value="2001">2001</option>
-              <option value="2000">2000</option>
-              <option value="1999">1999</option>
-              <option value="1998">1998</option>
-              <option value="1997">1997</option>
-              <option value="1996">1996</option>
-              <option value="1995">1995</option>
-              <option value="1994">1994</option>
-              <option value="1993">1993</option>
-              <option value="1992">1992</option>
-              <option value="1991">1991</option>
-              <option value="1990">1990</option>
-              <option value="1989">1989</option>
-              <option value="1988">1988</option>
-              <option value="1987">1987</option>
-              <option value="1986">1986</option>
-              <option value="1985">1985</option>
-              <option value="1984">1984</option>
-              <option value="1983">1983</option>
-              <option value="1982">1982</option>
-              <option value="1981">1981</option>
-              <option value="1980">1980</option>
-              <option value="1979">1979</option>
-              <option value="1978">1978</option>
-              <option value="1977">1977</option>
-              <option value="1976">1976</option>
-              <option value="1975">1975</option>
-              <option value="1974">1974</option>
-              <option value="1973">1973</option>
-              <option value="1972">1972</option>
-              <option value="1971">1971</option>
-              <option value="1970">1970</option>
-              <option value="1969">1969</option>
-              <option value="1968">1968</option>
-              <option value="1967">1967</option>
-              <option value="1966">1966</option>
-              <option value="1965">1965</option>
-              <option value="1964">1964</option>
-              <option value="1963">1963</option>
-              <option value="1962">1962</option>
-              <option value="1961">1961</option>
-              <option value="1960">1960</option>
-              <option value="1959">1959</option>
-              <option value="1958">1958</option>
-              <option value="1957">1957</option>
-              <option value="1956">1956</option>
-              <option value="1955">1955</option>
-              <option value="1954">1954</option>
-              <option value="1953">1953</option>
-              <option value="1952">1952</option>
-              <option value="1951">1951</option>
-              <option value="1950">1950</option>
-              <option value="1949">1949</option>
-              <option value="1948">1948</option>
-              <option value="1947">1947</option>
-              <option value="1946">1946</option>
-              <option value="1945">1945</option>
-              <option value="1944">1944</option>
-              <option value="1943">1943</option>
-              <option value="1942">1942</option>
-              <option value="1941">1941</option>
-              <option value="1940">1940</option>
-              <option value="1939">1939</option>
-              <option value="1938">1938</option>
-              <option value="1937">1937</option>
-              <option value="1936">1936</option>
-              <option value="1935">1935</option>
-              <option value="1934">1934</option>
-              <option value="1933">1933</option>
-              <option value="1932">1932</option>
-              <option value="1931">1931</option>
-              <option value="1930">1930</option>
-              <option value="1929">1929</option>
-              <option value="1928">1928</option>
-              <option value="1927">1927</option>
-              <option value="1926">1926</option>
-              <option value="1925">1925</option>
-              <option value="1924">1924</option>
-              <option value="1923">1923</option>
-              <option value="1922">1922</option>
-              <option value="1921">1921</option>
-              <option value="1920">1920</option>
-                  </select>
-                </div>
-              </div>
+          <div class="field--row">
+            <div class="field">
+              <label class="field-label" for="emergency-contact-relationship">Relationship to child(ren) <span aria-hidden="true">*</span></label>
+              <input type="text" id="emergency-contact-relationship" name="emergency_contact_relationship" required>
             </div>
-          <div class="field">
-            <label for="child3-name">Third Child's Full Name:</label>
-            <input type="text" id="child3-name" name="child3_name" required>
-          </div>
-          <div class="field-group">
-              <p class="field-label" id="child3-dob-label">Third Child's Date of Birth <span aria-hidden="true">*</span></p>
-              <div class="field--row field--row-3" role="group" aria-labelledby="child3-dob-label">
-                <div class="field">
-                  <label for="child3-dob-day">Day</label>
-                  <select id="child3-dob-day" name="child3_dob_day" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="child3-dob-month">Month</label>
-                  <select id="child3-dob-month" name="child3_dob_month" required>
-              <option value="1">January</option>
-              <option value="2">February</option>
-              <option value="3">March</option>
-              <option value="4">April</option>
-              <option value="5">May</option>
-              <option value="6">June</option>
-              <option value="7">July</option>
-              <option value="8">August</option>
-              <option value="9">September</option>
-              <option value="10">October</option>
-              <option value="11">November</option>
-              <option value="12">December</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="child3-dob-year">Year</label>
-                  <select id="child3-dob-year" name="child3_dob_year" required>
-              <option value="2027">2027</option>
-              <option value="2026">2026</option>
-              <option value="2025">2025</option>
-              <option value="2024">2024</option>
-              <option value="2023">2023</option>
-              <option value="2022">2022</option>
-              <option value="2021">2021</option>
-              <option value="2020">2020</option>
-              <option value="2019">2019</option>
-              <option value="2018">2018</option>
-              <option value="2017">2017</option>
-              <option value="2016">2016</option>
-              <option value="2015">2015</option>
-              <option value="2014">2014</option>
-              <option value="2013">2013</option>
-              <option value="2012">2012</option>
-              <option value="2011">2011</option>
-              <option value="2010">2010</option>
-              <option value="2009">2009</option>
-              <option value="2008">2008</option>
-              <option value="2007">2007</option>
-              <option value="2006">2006</option>
-              <option value="2005">2005</option>
-              <option value="2004">2004</option>
-              <option value="2003">2003</option>
-              <option value="2002">2002</option>
-              <option value="2001">2001</option>
-              <option value="2000">2000</option>
-              <option value="1999">1999</option>
-              <option value="1998">1998</option>
-              <option value="1997">1997</option>
-              <option value="1996">1996</option>
-              <option value="1995">1995</option>
-              <option value="1994">1994</option>
-              <option value="1993">1993</option>
-              <option value="1992">1992</option>
-              <option value="1991">1991</option>
-              <option value="1990">1990</option>
-              <option value="1989">1989</option>
-              <option value="1988">1988</option>
-              <option value="1987">1987</option>
-              <option value="1986">1986</option>
-              <option value="1985">1985</option>
-              <option value="1984">1984</option>
-              <option value="1983">1983</option>
-              <option value="1982">1982</option>
-              <option value="1981">1981</option>
-              <option value="1980">1980</option>
-              <option value="1979">1979</option>
-              <option value="1978">1978</option>
-              <option value="1977">1977</option>
-              <option value="1976">1976</option>
-              <option value="1975">1975</option>
-              <option value="1974">1974</option>
-              <option value="1973">1973</option>
-              <option value="1972">1972</option>
-              <option value="1971">1971</option>
-              <option value="1970">1970</option>
-              <option value="1969">1969</option>
-              <option value="1968">1968</option>
-              <option value="1967">1967</option>
-              <option value="1966">1966</option>
-              <option value="1965">1965</option>
-              <option value="1964">1964</option>
-              <option value="1963">1963</option>
-              <option value="1962">1962</option>
-              <option value="1961">1961</option>
-              <option value="1960">1960</option>
-              <option value="1959">1959</option>
-              <option value="1958">1958</option>
-              <option value="1957">1957</option>
-              <option value="1956">1956</option>
-              <option value="1955">1955</option>
-              <option value="1954">1954</option>
-              <option value="1953">1953</option>
-              <option value="1952">1952</option>
-              <option value="1951">1951</option>
-              <option value="1950">1950</option>
-              <option value="1949">1949</option>
-              <option value="1948">1948</option>
-              <option value="1947">1947</option>
-              <option value="1946">1946</option>
-              <option value="1945">1945</option>
-              <option value="1944">1944</option>
-              <option value="1943">1943</option>
-              <option value="1942">1942</option>
-              <option value="1941">1941</option>
-              <option value="1940">1940</option>
-              <option value="1939">1939</option>
-              <option value="1938">1938</option>
-              <option value="1937">1937</option>
-              <option value="1936">1936</option>
-              <option value="1935">1935</option>
-              <option value="1934">1934</option>
-              <option value="1933">1933</option>
-              <option value="1932">1932</option>
-              <option value="1931">1931</option>
-              <option value="1930">1930</option>
-              <option value="1929">1929</option>
-              <option value="1928">1928</option>
-              <option value="1927">1927</option>
-              <option value="1926">1926</option>
-              <option value="1925">1925</option>
-              <option value="1924">1924</option>
-              <option value="1923">1923</option>
-              <option value="1922">1922</option>
-              <option value="1921">1921</option>
-              <option value="1920">1920</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-        </fieldset>
-        <fieldset>
-          <legend>Medical, allergies &amp; consents</legend>
-          <div class="field">
-            <label for="medical-conditions">Outline if any of the children have any Medical Conditions/Special Educational Needs (Please specify by Child's Name):</label>
-            <textarea id="medical-conditions" name="medical_conditions" rows="4" required></textarea>
-          </div>
-          <div class="field">
-            <label for="allergies">Outline if any of the children have any Allergies (Please specify by Child's Name):</label>
-            <textarea id="allergies" name="allergies" rows="4" required></textarea>
-          </div>
-          <div class="field-group">
-            <p class="field-label" id="religious-events-label">Some events may include Greek Christian traditions (e.g. Easter, Christmas etc). Please indicate your preference: <span aria-hidden="true">*</span></p>
-            <!-- checkbox groups: 'required' on the first box only, simulating at-least-one-selected — HTML has no native checkbox-group validation -->
-            <div class="radio-group" role="group" aria-labelledby="religious-events-label">
-              <input type="checkbox" id="religious-consent-yes" name="religious_events_consent" value="I consent to my child taking part in these events" required>
-              <label for="religious-consent-yes">I consent to my child taking part in these events</label>
-              <input type="checkbox" id="religious-consent-no" name="religious_events_consent" value="I do not consent to my child taking part in these events">
-              <label for="religious-consent-no">I do not consent to my child taking part in these events</label>
+            <div class="field">
+              <label class="field-label" for="emergency-contact-phone">Phone <span aria-hidden="true">*</span></label>
+              <input type="tel" id="emergency-contact-phone" name="emergency_contact_phone" required>
             </div>
           </div>
         </fieldset>
@@ -959,55 +1101,167 @@
           </div>
         </fieldset>
         <fieldset>
+          <legend>Consents</legend>
+          <div class="field-group">
+            <p class="field-label" id="religious-events-label">Some events may include Greek Christian traditions (e.g. Easter, Christmas etc). Please indicate your preference: <span aria-hidden="true">*</span></p>
+            <div class="radio-group" role="group" aria-labelledby="religious-events-label">
+              <input type="radio" id="religious-consent-yes" name="religious_events_consent" value="I consent to my child taking part in these events" required>
+              <label for="religious-consent-yes">I consent to my child taking part in these events</label>
+              <input type="radio" id="religious-consent-no" name="religious_events_consent" value="I do not consent to my child taking part in these events" required>
+              <label for="religious-consent-no">I do not consent to my child taking part in these events</label>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
           <legend>Fees</legend>
           <div class="field-group">
             <p class="field-label" id="fees-label">Fees: <span aria-hidden="true">*</span></p>
-            <!-- checkbox groups: 'required' on the first box only, simulating at-least-one-selected — HTML has no native checkbox-group validation -->
             <div class="radio-group radio-group--stacked" role="group" aria-labelledby="fees-label">
-              <input type="checkbox" id="fee-1" name="fees" value="One Child (Nursery to Year 6) - £400.00" required>
+              <input type="radio" id="fee-1" name="fees" value="One Child (Nursery to Year 6) - £400.00" required>
               <label for="fee-1">One Child (Nursery to Year 6) - £400.00</label>
-              <input type="checkbox" id="fee-2" name="fees" value="One Child (GCSE*) - £550.00">
+              <input type="radio" id="fee-2" name="fees" value="One Child (GCSE*) - £550.00" required>
               <label for="fee-2">One Child (GCSE*) - £550.00</label>
-              <input type="checkbox" id="fee-3" name="fees" value="Two Children (Nursery to Year 6) - £755.00">
+              <input type="radio" id="fee-3" name="fees" value="Two Children (Nursery to Year 6) - £755.00" required>
               <label for="fee-3">Two Children (Nursery to Year 6) - £755.00</label>
-              <input type="checkbox" id="fee-4" name="fees" value="Two Children (1x Nursery to Year 6, 1x GCSE*) - £900.00">
+              <input type="radio" id="fee-4" name="fees" value="Two Children (1x Nursery to Year 6, 1x GCSE*) - £900.00" required>
               <label for="fee-4">Two Children (1x Nursery to Year 6, 1x GCSE*) - £900.00</label>
-              <input type="checkbox" id="fee-5" name="fees" value="Two Children (2x GCSE*) - £1,045.00">
+              <input type="radio" id="fee-5" name="fees" value="Two Children (2x GCSE*) - £1,045.00" required>
               <label for="fee-5">Two Children (2x GCSE*) - £1,045.00</label>
-              <input type="checkbox" id="fee-6" name="fees" value="Three Children (Nursery to Year 6) - £1,075.00">
+              <input type="radio" id="fee-6" name="fees" value="Three Children (Nursery to Year 6) - £1,075.00" required>
               <label for="fee-6">Three Children (Nursery to Year 6) - £1,075.00</label>
-              <input type="checkbox" id="fee-7" name="fees" value="Three Children (2x Nursery to Year 6, 1x GCSE*) - £1,255.00">
+              <input type="radio" id="fee-7" name="fees" value="Three Children (2x Nursery to Year 6, 1x GCSE*) - £1,255.00" required>
               <label for="fee-7">Three Children (2x Nursery to Year 6, 1x GCSE*) - £1,255.00</label>
-              <input type="checkbox" id="fee-8" name="fees" value="Three Children (1x Nursery to Year 6, 2x GCSE*) - £1,415.00">
+              <input type="radio" id="fee-8" name="fees" value="Three Children (1x Nursery to Year 6, 2x GCSE*) - £1,415.00" required>
               <label for="fee-8">Three Children (1x Nursery to Year 6, 2x GCSE*) - £1,415.00</label>
             </div>
+            <p class="hint">* GCSE examination entry fees are not included in the annual fee and are payable separately before examination entries are submitted.</p>
           </div>
           <div class="notes">
-            <p class="field-label">Fee terms</p>
-            <ol>
-              <li>Fees are normally paid in instalments across the year. Payment dates for 2026/27 are being finalised — we'll confirm instalment due dates, and whether a late fee or early-payment discount applies, as soon as they're set.</li>
-              <li>Once children are enrolled, you are liable for the annual school fees in full, even if you decide to no longer attend. Please note, this decision has been made as class and teacher allocations are made based on the number of enrolled students and their ability levels at the start of the year. If a child decides to no longer attend, we cannot move teachers and classes around as this would be unfair to the other children.</li>
-              <li>For new children, we offer a complimentary two-week trial period, allowing them to settle in their new surroundings. Should you choose not to continue your child's enrolment within this trial period, no fee's will be incurred. However, if your child decides to stay beyond the two-week trial period, the full fee will apply in full, including the initial trial period and they will be considered an 'enrolled child' per point 3 above.</li>
-              <li>Fees can be paid by cash, bank transfer (BACS) or by card to The Greek Academy. If you are paying by bank transfer, please ensure you put your child's full name as a payment reference so that the payment can be allocated correctly.</li>
-            </ol>
+            <h3>Πληρωμή Διδάκτρων | Paying Your Fees</h3>
+            <h4>1. Annual School Fees</h4>
+            <p>The annual school fee may be paid using one of the following payment options:</p>
+            <ul>
+              <li>Option 1 – Annual Payment: Payment of the full annual fee by Friday 28 August 2026; or</li>
+              <li>Option 2 – Two Instalments:
+                <ul>
+                  <li>First instalment: Due by Friday 28 August 2026.</li>
+                  <li>Second instalment: Due by Tuesday 5 January 2027.</li>
+                </ul>
+              </li>
+            </ul>
+            <p>Payment may be made by bank transfer, debit/credit card or cash.</p>
+            <h4>2. Payment Deadlines</h4>
+            <p>To enable The Greek Academy to plan staffing, class sizes, timetables and resources for the forthcoming academic year, all annual payments or first instalments must be received by Friday 28 August 2026.</p>
+            <p>The second instalment (where applicable) must be received by Tuesday 5 January 2027.</p>
+            <p>Where payment is not received by the relevant deadline, The Greek Academy reserves the right to apply a £20 late payment administration fee, unless otherwise agreed in writing by the Committee.</p>
+            <h4>3. New Pupil Trial Period</h4>
+            <p>New pupils are entitled to a complimentary two-week trial period.</p>
+            <p>The purpose of the trial period is to allow both the pupil and their family to decide whether they wish to join The Greek Academy. If the family decides not to accept the school place, they may withdraw at any time during the two-week trial period without any obligation to pay the annual school fee.</p>
+            <p>If the family decides to accept the school place and the pupil continues attending after the two-week trial period, the full annual school fee shall become payable in accordance with the payment options set out above. The complimentary trial period does not reduce or pro-rate the annual fee.</p>
+            <h4>4. Acceptance of a School Place</h4>
+            <p>Following the two-week trial period (where applicable), or immediately upon registration for returning pupils, a pupil's place is considered accepted and reserved for the remainder of the academic year.</p>
+            <p>The Greek Academy allocates teachers, classrooms, resources and operating costs based upon confirmed enrolments. For this reason, the annual school fee remains payable in full even if a pupil subsequently withdraws or ceases attending during the academic year.</p>
+            <h4>5. Exceptional Circumstances</h4>
+            <p>The Committee recognises that exceptional circumstances may occasionally arise.</p>
+            <p>Requests for consideration due to serious illness, permanent relocation or other significant unforeseen circumstances should be submitted in writing to the Committee. Any reduction, waiver or refund of fees shall be entirely at the Committee's absolute discretion.</p>
+            <h4>6. Non-Payment of Fees</h4>
+            <p>Where fees remain outstanding and no agreed alternative arrangement is in place, The Greek Academy reserves the right to:</p>
+            <ul>
+              <li>Refuse admission until outstanding fees have been paid.</li>
+              <li>Suspend a pupil from attending lessons or participating in school activities.</li>
+              <li>Withhold examination entries (where applicable).</li>
+              <li>Withdraw the pupil's place at the school.</li>
+            </ul>
+            <p>Any outstanding fees shall remain payable notwithstanding the withdrawal of a pupil's place.</p>
+            <h4>7. Payment Details</h4>
           </div>
           <div class="bank">
-            <h3>Bank transfer details</h3>
             <dl>
-              <div><dt>Account name</dt><dd>The Greek Academy</dd></div>
-              <div><dt>Account number</dt><dd>65046811</dd></div>
-              <div><dt>Sort code</dt><dd>51-50-00</dd></div>
-              <div><dt>Reference</dt><dd>Your child's full name</dd></div>
+              <div><dt>Account Name</dt><dd>The Greek Academy</dd></div>
+              <div><dt>Account Number</dt><dd>65046811</dd></div>
+              <div><dt>Sort Code</dt><dd>51-50-00</dd></div>
+              <div><dt>Payment Reference</dt><dd>Please use your child's full name.</dd></div>
             </dl>
+            <p class="hint">Payment may be made by bank transfer, debit/credit card or cash. Parents/guardians are encouraged to retain proof of payment for their records.</p>
           </div>
-          <p class="hint">*Please note, if your child is a GCSE sitting student, exam entry fees are not included in the annual fee and will be required to be paid in full to The Greek Academy when required prior to their exam entry submissions. You will be notified of these fees closer to the time.</p>
         </fieldset>
+
         <div class="notes">
-          <h3>Terms and Conditions</h3>
-          <p>In addition to all other standard rules and regulations as defined on our website that apply to all members of the school (students, parents, guardians and teachers), we would like to note the following terms &amp; conditions:</p>
-          <p><strong>Photography/marketing consent:</strong> The school publishes photographs of the children in school brochures, on the school website, and in magazines for the purpose of marketing the school, its activities, and the academic standards achieved. As a family-oriented school, we allow parents to take photographs and videos of school concerts, plays, and similar events for their personal use. The school may also engage professional photographers to produce further marketing materials. Unless we are informed otherwise in writing, we will assume that you consent to the use of images of your child/(ren) for the purposes outlined above. If you do not wish to give this consent, please notify the school in writing.</p>
-          <p><strong>Attendance expectations:</strong> All students are expected to attend school regularly each week to ensure they receive the full benefit of the educational programme and maintain continuity in their learning. In addition to weekly attendance, students are also expected to attend all key school events, including end-of-term yiortes (celebrations) and the annual Dinner and Dance. These events form an important part of the school's cultural, social, and community life, and participation is essential to foster a sense of belonging and shared experience among students. Non-attendance—particularly when notice is given at the last minute—is highly disruptive to the school community. It affects planning, rehearsals, and the overall experience for other students and staff who work hard to prepare for these occasions. Parents and guardians are therefore asked to make every effort to ensure their child(ren)'s full attendance and to inform the school in advance, in writing, should any unavoidable absence arise.</p>
-          <p><strong>Mobile phone rule:</strong> To maintain a focused and respectful learning environment, mobile phones must not be used during lesson time at Greek School. We have experienced several disruptions due to inappropriate phone use during class, which negatively affects both teaching and learning. If students need to bring a mobile phone to school, it must remain switched off and out of sight during all lessons. Phones may only be used: Before school begins / After school has finished / During designated break times. Any use of mobile phones outside of these permitted times will result in the phone being confiscated immediately. Confiscated phones will be held securely and returned at the end of school. Repeated misuse may lead to further disciplinary action and a requirement for a parent or guardian to collect the device. We appreciate your support in helping us maintain an environment that prioritises learning, safety, and respect for all students and staff.</p>
+          <h3>Key School Policies and Information</h3>
+          <p>The following section summarises some of the key school policies and requirements that apply to all pupils and families attending The Greek Academy. It is intended to highlight the most important information at the point of registration. Full versions of the school's policies are available on request and/or via The Greek Academy website.</p>
+          <h4>1. Photography and Promotional Use</h4>
+          <p>The Greek Academy regularly takes photographs and videos during lessons, performances, school events and other activities for use in school brochures, newsletters, the school website, social media platforms, magazines and other promotional material promoting the school and its activities.</p>
+          <p>Unless the school receives written notification to the contrary, parents/guardians are deemed to consent to photographs and videos of their child being used for these purposes.</p>
+          <p>Parents/guardians may withdraw their consent at any time by notifying the school in writing. Any withdrawal of consent will apply to future publications and promotional material and will not apply retrospectively to material already published.</p>
+          <h4>2. Attendance Expectations</h4>
+          <p>Regular attendance is essential to ensure pupils receive the full benefit of the educational programme and maintain continuity in their learning.</p>
+          <p>In addition to attending weekly lessons, pupils are expected to participate in key school events, including end-of-term yiortes (celebrations), performances and the Annual Dinner &amp; Dance.</p>
+          <p>These events form an important part of the school's educational, cultural and community life, helping pupils develop a sense of belonging, confidence and pride in their Greek heritage.</p>
+          <p>Non-attendance, particularly where little or no notice is given, can significantly affect lesson planning, rehearsals and the experience of other pupils.</p>
+          <p>Parents/guardians are therefore expected to make every reasonable effort to ensure their child attends regularly and to notify the school in writing as early as possible if an unavoidable absence arises.</p>
+          <h4>3. Mobile Phone Policy</h4>
+          <p>To maintain a safe, focused and respectful learning environment, pupils must not use or remove mobile phones at any time during the school session.</p>
+          <p>Where a pupil brings a mobile phone to school, it must remain switched off and securely stored in their school bag throughout the entire school session.</p>
+          <p>Mobile phones must not be used during lessons, break times, transitions between classes, performances or any other school activity unless expressly authorised by a member of staff in exceptional circumstances.</p>
+          <p>The use of a mobile phone to photograph, video record or audio record any pupil, member of staff, volunteer or school activity without the prior permission of the school is strictly prohibited and will be treated as a serious breach of the school's Behaviour Policy.</p>
+          <p>Any pupil found using or removing a mobile phone during the school session may have the device confiscated. Confiscated devices will normally be returned to a parent/guardian at the end of the session or at another time determined by the school.</p>
+          <p>Serious or repeated breaches of this policy may result in further disciplinary action in accordance with the school's Behaviour Policy.</p>
+          <h4>4. Behaviour and Respect</h4>
+          <p>Pupils, parents/guardians and visitors are expected to treat teachers, staff, volunteers and fellow pupils with courtesy, respect and dignity at all times.</p>
+          <p>The Greek Academy reserves the right to take appropriate disciplinary action where behaviour falls below the standards expected by the school.</p>
+          <p>Depending on the seriousness of the matter, this may include:</p>
+          <ul>
+            <li>A verbal warning.</li>
+            <li>A written warning.</li>
+            <li>A Behaviour Agreement.</li>
+            <li>Temporary suspension.</li>
+            <li>Withdrawal of the pupil's place at the school.</li>
+          </ul>
+          <p>Abusive, threatening, intimidating, discriminatory or otherwise unacceptable behaviour towards any member of the school community, whether in person, in writing or through electronic communications, will not be tolerated and may result in disciplinary action or the withdrawal of a pupil's place at the school.</p>
+          <h4>5. Collection and Punctuality</h4>
+          <p>Parents/guardians are responsible for ensuring that pupils arrive and are collected promptly at the published start and finish times.</p>
+          <p>Where a pupil is to be collected by another authorised adult, the school must be informed in advance.</p>
+          <p>If a parent/guardian is unexpectedly delayed, the school should be contacted as soon as reasonably possible.</p>
+          <p>Repeated late collection may result in the Committee reviewing the pupil's continued place at the school.</p>
+          <h4>6. Medical Information and Medication</h4>
+          <p>Parents/guardians must provide accurate and up-to-date information regarding any medical conditions, allergies, Special Educational Needs and Disabilities (SEND), emergency medication or other welfare matters affecting their child whilst attending The Greek Academy.</p>
+          <p>Any medication required during school hours must be discussed with the school in advance and supplied in accordance with the school's procedures.</p>
+          <p>Parents/guardians are responsible for notifying the school promptly of any changes to medical or welfare information throughout the academic year.</p>
+          <h4>7. School Policies</h4>
+          <p>Parents/guardians agree to comply with the school's current policies, including (but not limited to):</p>
+          <ul>
+            <li>Attendance Policy</li>
+            <li>Behaviour Policy</li>
+            <li>Mobile Phone Policy</li>
+            <li>Safeguarding and Child Protection Policy</li>
+            <li>Photography Policy</li>
+            <li>Data Protection and Privacy Policy</li>
+          </ul>
+          <p>Copies of these policies are available on request and/or via The Greek Academy website.</p>
+          <p>The Committee reserves the right to review and amend school policies from time to time. Any significant changes will be communicated to parents/guardians.</p>
+          <h4>8. Data Protection</h4>
+          <p>The Greek Academy will use the information provided on this registration form for the purposes of pupil enrolment, education, safeguarding, welfare, communication, administration and fee collection.</p>
+          <p>Personal information will be processed in accordance with applicable UK data protection legislation and will only be accessed by authorised persons who require the information to fulfil their responsibilities.</p>
+          <p>Medical, allergy, medication and SEND information may be shared with relevant teachers, first aiders and authorised volunteers where necessary to safeguard the welfare of the pupil.</p>
+          <p>Further information is available within the school's Privacy Notice.</p>
+          <h4>9. Changes to Information</h4>
+          <p>Parents/guardians must notify The Greek Academy promptly of any changes to:</p>
+          <ul>
+            <li>Home address</li>
+            <li>Telephone numbers</li>
+            <li>Email addresses</li>
+            <li>Emergency contacts</li>
+            <li>Collection arrangements</li>
+            <li>Medical conditions</li>
+            <li>Allergies</li>
+            <li>Medication</li>
+            <li>SEND information</li>
+          </ul>
+          <p>It is the parent/guardian's responsibility to ensure that the school always holds accurate and up-to-date information.</p>
+          <h4>10. Accuracy of Information</h4>
+          <p>The parent/guardian confirms that all information provided on this registration form is true, complete and accurate to the best of their knowledge.</p>
+          <p>The Greek Academy is entitled to rely upon the information supplied when making decisions relating to the pupil's education, welfare and safeguarding.</p>
+          <p>Knowingly providing false or misleading information, or failing to disclose information that may affect the welfare, safeguarding or education of a pupil, may result in the Committee reviewing or withdrawing the pupil's place at the school.</p>
           <p class="hint">The Greek Academy, Grange Park Primary School, Worlds End Lane, London, N21 1PP · Tel: <a href="tel:07398904535">07398 904 535</a> · E-Mail: <a href="mailto:info@thegreekacademy.co.uk">info@thegreekacademy.co.uk</a></p>
         </div>
         <fieldset>
@@ -1030,8 +1284,8 @@
             <input type="date" id="sig-date" name="sig_date" required>
           </div>
         </fieldset>
+        <p class="hint">By submitting this form you agree to the information above being stored and used as described in our <a href="policy-gdpr.html">privacy policy</a>.</p>
         <button class="btn btn--gold" type="submit">Submit</button>
-        <p class="form-note">Design preview — submissions aren't wired up in this mockup.</p>
       </form>
     </div>
   </div>
@@ -1094,8 +1348,9 @@ document.querySelectorAll('.nav-group__btn').forEach(function (btn) {
 });
 var io = new IntersectionObserver(function (entries) {
   entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-}, { threshold: 0.12 });
+}, { threshold: 0 }); // form wrap is ~10x viewport height — a fractional threshold can never be reached on it
 document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 </script>
+<script src="js/registration.js"></script>
 </body>
 </html>

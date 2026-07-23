@@ -662,3 +662,21 @@ h2 {
 @media (max-width: 640px) { .field--row-3 { grid-template-columns: 1fr; } }
 .form-card .notes, .form-card .bank { margin-top: 4px; margin-bottom: 26px; }
 .form-card .notes h3, .form-card .bank h3, .form-card .notes p.field-label { font-family: "GFS Didot", serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 10px; }
+
+/* ---------- registration form backend wiring (2026-07-20) ---------- */
+.hp-field { position: absolute; left: -9999px; top: auto; height: 1px; overflow: hidden; }
+
+/* ---------- registration form: per-child sections (2026-07-23) ---------- */
+.btn--secondary { border: 2px solid var(--aegean); color: var(--aegean); background: transparent; }
+.btn--secondary:hover { background: var(--aegean); color: #fff; }
+.link-button {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-weight: 700;
+  color: var(--sea);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.link-button:hover { color: var(--aegean); }

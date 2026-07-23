@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank you — The Greek Academy</title>
+<meta name="description" content="Thank you for registering your child with The Greek Academy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="ribbon">
+  <div class="wrap">
+    <div><strong>Tuesday evenings · 5–8pm</strong> during term time — Grange Park Primary School, Worlds End Lane, N21 1PP</div>
+    <div>Call us: <a href="tel:07398904535">07398 904 535</a></div>
+  </div>
+</div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="images/logo-final.jpg" alt="The Greek Academy logo">
+      <div class="name">The Greek Academy<span>Greek school · Winchmore Hill</span></div>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="main-nav" id="nav">
+      <a href="index.html">Home</a>
+      <div class="nav-group">
+        <button class="nav-group__btn" aria-expanded="false">About<span class="caret" aria-hidden="true">▾</span></button>
+        <div class="nav-drop">
+          <a href="about.html">About the school</a>
+          <a href="committee.html">Committee</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+      </div>
+      <a href="index.html#classes">Classes</a>
+      <div class="nav-group">
+        <button class="nav-group__btn" aria-expanded="false">Enrolment<span class="caret" aria-hidden="true">▾</span></button>
+        <div class="nav-drop">
+          <a href="enrolment.html">Enrolment &amp; fees</a>
+          <a href="term-dates.html">Term dates</a>
+          <a href="registration.html">Registration 2026/27</a>
+        </div>
+      </div>
+      <a href="events.html">Events</a>
+      <div class="nav-group">
+        <button class="nav-group__btn" aria-expanded="false">Policies<span class="caret" aria-hidden="true">▾</span></button>
+        <div class="nav-drop">
+          <a href="policy-safeguarding.html">Safeguarding</a>
+          <a href="policy-anti-bullying.html">Anti-bullying</a>
+          <a href="policy-behaviour.html">Behaviour</a>
+          <a href="policy-gdpr.html">GDPR &amp; privacy</a>
+          <a href="policy-mobile-phone.html">Mobile phones</a>
+          <a href="policy-risk-assessment.html">Risk assessment</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+      <a class="btn btn--gold" href="registration.html">Register for 2026/27</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <main>
+      <h1>Thank you for registering with The Greek Academy!</h1>
+      <p>We look forward to welcoming you on Tuesday. We kindly ask all parents to save our
+         contact details to your phonebook in order to receive up to date notifications from the school.</p>
+      <p>Please visit our website for <a href="term-dates.html">term dates</a>. If you have any questions
+         please contact a member of the committee on <a href="tel:07398904535">07398904535</a> or
+         <a href="mailto:info@thegreekacademy.co.uk">info@thegreekacademy.co.uk</a></p>
+    </main>
+  </div>
+</section>
+
+<footer class="site-foot" id="contact">
+  <div class="top-border" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <div class="brand-line">The Greek Academy</div>
+      <p class="small">A community Greek school teaching language, culture and heritage — nursery to GCSE, every Tuesday evening during term time.</p>
+    </div>
+    <div>
+      <h4>Find us</h4>
+      <ul>
+        <li>Grange Park Primary School</li>
+        <li>Worlds End Lane, London N21 1PP</li>
+        <li><a href="tel:07398904535">07398 904 535</a></li>
+        <li><a href="mailto:info@thegreekacademy.co.uk">info@thegreekacademy.co.uk</a></li>
+        <li><a href="mailto:headteacher@thegreekacademy.co.uk">headteacher@thegreekacademy.co.uk</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Quick links</h4>
+      <ul>
+        <li><a href="about.html">About the school</a></li>
+        <li><a href="enrolment.html">Enrolment &amp; fees</a></li>
+        <li><a href="term-dates.html">Term dates</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="registration.html">Registration 2026/27</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Policies</h4>
+      <ul>
+        <li><a href="policy-safeguarding.html">Safeguarding</a></li>
+        <li><a href="policy-anti-bullying.html">Anti-bullying</a></li>
+        <li><a href="policy-behaviour.html">Behaviour</a></li>
+        <li><a href="policy-gdpr.html">GDPR &amp; privacy</a></li>
+        <li><a href="policy-mobile-phone.html">Mobile phones</a></li>
+        <li><a href="policy-risk-assessment.html">Risk assessment</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyright">© 2026 The Greek Academy · Website concept by AMP London Group</div>
+</footer>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function () {
+  var nav = document.getElementById('nav');
+  var open = nav.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+document.querySelectorAll('.nav-group__btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var open = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!open));
+  });
+});
+</script>
+</body>
+</html>
