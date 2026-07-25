@@ -9,6 +9,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+
+<link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="canonical" href="https://thegreekacademy.co.uk/registration.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Greek Academy">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Registration 2026/27 — The Greek Academy">
+<meta property="og:description" content="Register your child for The Greek Academy 2026/27 — complete the online registration form and start a two-week free trial.">
+<meta property="og:url" content="https://thegreekacademy.co.uk/registration.html">
+<meta property="og:image" content="https://thegreekacademy.co.uk/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Greek Academy logo">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 
@@ -84,6 +99,13 @@
     <div class="eyebrow"><span class="el">Η αίτηση</span> Registration form</div>
     <h2>The Greek Academy Registration Form 2026/27.</h2>
     <div class="form-card">
+      <noscript>
+        <p class="consent-gate" role="alert"><strong>Please turn on JavaScript to use this form.</strong>
+        Adding a second or third child and the allergy questions need it, so the form cannot be
+        completed without it. If you would rather not, download the
+        <a href="Greek-Academy-Registration-Form-2026-27.pdf">printable registration form (PDF)</a>,
+        or call us on <a href="tel:07398904535">07398 904 535</a> and we will complete it with you.</p>
+      </noscript>
       <form action="submit.php" method="post" enctype="multipart/form-data">
         <div class="hp-field" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
         <fieldset>
@@ -91,11 +113,11 @@
           <div class="field--row">
             <div class="field">
               <label class="field-label" for="child1-name-first">First name <span aria-hidden="true">*</span></label>
-              <input type="text" id="child1-name-first" name="child1_name_first" required>
+              <input type="text" id="child1-name-first" name="child1_name_first" maxlength="100" required>
             </div>
             <div class="field">
               <label class="field-label" for="child1-name-last">Last name <span aria-hidden="true">*</span></label>
-              <input type="text" id="child1-name-last" name="child1_name_last" required>
+              <input type="text" id="child1-name-last" name="child1_name_last" maxlength="100" required>
             </div>
           </div>
           <div class="field-group">
@@ -281,21 +303,21 @@
           <div class="field--row returning-only" data-child="1" hidden>
             <div class="field">
               <label class="field-label" for="child1-current-class">Current class (25/26) <span aria-hidden="true">*</span></label>
-              <input type="text" id="child1-current-class" name="child1_current_class" data-req>
+              <input type="text" id="child1-current-class" name="child1_current_class" maxlength="100" data-req>
             </div>
             <div class="field">
               <label class="field-label" for="child1-current-teacher">Current teacher (25/26) <span aria-hidden="true">*</span></label>
-              <input type="text" id="child1-current-teacher" name="child1_current_teacher" data-req>
+              <input type="text" id="child1-current-teacher" name="child1_current_teacher" maxlength="100" data-req>
             </div>
           </div>
           <div class="field-group">
             <label class="field-label" for="child1-medical">Medical conditions <span aria-hidden="true">*</span></label>
-            <textarea id="child1-medical" name="child1_medical" rows="3" required></textarea>
+            <textarea id="child1-medical" name="child1_medical" maxlength="2000" rows="3" required></textarea>
             <p class="hint">Please specify any medication required during school hours or any medication the child may have on their belongings, such as EpiPens. If none, write "None".</p>
           </div>
           <div class="field-group">
             <label class="field-label" for="child1-sen">Special educational needs (SEN) <span aria-hidden="true">*</span></label>
-            <textarea id="child1-sen" name="child1_sen" rows="3" required></textarea>
+            <textarea id="child1-sen" name="child1_sen" maxlength="2000" rows="3" required></textarea>
             <p class="hint">If none, write "None".</p>
           </div>
           <div class="field-group">
@@ -310,7 +332,7 @@
           <div class="allergy-only" data-child="1" hidden>
             <div class="field-group">
               <label class="field-label" for="child1-allergies">Allergy details <span aria-hidden="true">*</span></label>
-              <textarea id="child1-allergies" name="child1_allergies" rows="3" data-req></textarea>
+              <textarea id="child1-allergies" name="child1_allergies" maxlength="2000" rows="3" data-req></textarea>
             </div>
             <div class="field-group">
               <label class="field-label" for="child1-photo">Child's photo <span aria-hidden="true">*</span></label>
@@ -322,30 +344,30 @@
             <p class="field-label">Address: <span aria-hidden="true">*</span></p>
             <div class="field">
               <label for="addr-line1">Address Line 1</label>
-              <input type="text" id="addr-line1" name="address_line1" required>
+              <input type="text" id="addr-line1" name="address_line1" maxlength="200" required>
             </div>
             <div class="field">
               <label for="addr-line2">Address Line 2</label>
-              <input type="text" id="addr-line2" name="address_line2">
+              <input type="text" id="addr-line2" name="address_line2" maxlength="200">
             </div>
             <div class="field--row">
               <div class="field">
                 <label for="addr-city">City</label>
-                <input type="text" id="addr-city" name="address_city" required>
+                <input type="text" id="addr-city" name="address_city" maxlength="100" required>
               </div>
               <div class="field">
                 <label for="addr-state">State / Province / Region</label>
-                <input type="text" id="addr-state" name="address_state">
+                <input type="text" id="addr-state" name="address_state" maxlength="100">
               </div>
             </div>
             <div class="field--row">
               <div class="field">
                 <label for="addr-postal">Postal Code</label>
-                <input type="text" id="addr-postal" name="address_postal" required>
+                <input type="text" id="addr-postal" name="address_postal" maxlength="100" required>
               </div>
               <div class="field">
                 <label for="addr-country">Country</label>
-                <select id="addr-country" name="address_country" required>
+                <select id="addr-country" name="address_country" maxlength="100" required>
               <option value="Afghanistan">Afghanistan</option>
               <option value="Albania">Albania</option>
               <option value="Algeria">Algeria</option>
@@ -553,11 +575,11 @@
           <div class="field--row">
             <div class="field">
               <label class="field-label" for="child2-name-first">First name <span aria-hidden="true">*</span></label>
-              <input type="text" id="child2-name-first" name="child2_name_first" data-req>
+              <input type="text" id="child2-name-first" name="child2_name_first" maxlength="100" data-req>
             </div>
             <div class="field">
               <label class="field-label" for="child2-name-last">Last name <span aria-hidden="true">*</span></label>
-              <input type="text" id="child2-name-last" name="child2_name_last" data-req>
+              <input type="text" id="child2-name-last" name="child2_name_last" maxlength="100" data-req>
             </div>
           </div>
           <div class="field-group">
@@ -743,21 +765,21 @@
           <div class="field--row returning-only" data-child="2" hidden>
             <div class="field">
               <label class="field-label" for="child2-current-class">Current class (25/26) <span aria-hidden="true">*</span></label>
-              <input type="text" id="child2-current-class" name="child2_current_class" data-req>
+              <input type="text" id="child2-current-class" name="child2_current_class" maxlength="100" data-req>
             </div>
             <div class="field">
               <label class="field-label" for="child2-current-teacher">Current teacher (25/26) <span aria-hidden="true">*</span></label>
-              <input type="text" id="child2-current-teacher" name="child2_current_teacher" data-req>
+              <input type="text" id="child2-current-teacher" name="child2_current_teacher" maxlength="100" data-req>
             </div>
           </div>
           <div class="field-group">
             <label class="field-label" for="child2-medical">Medical conditions <span aria-hidden="true">*</span></label>
-            <textarea id="child2-medical" name="child2_medical" rows="3" data-req></textarea>
+            <textarea id="child2-medical" name="child2_medical" maxlength="2000" rows="3" data-req></textarea>
             <p class="hint">Please specify any medication required during school hours or any medication the child may have on their belongings, such as EpiPens. If none, write "None".</p>
           </div>
           <div class="field-group">
             <label class="field-label" for="child2-sen">Special educational needs (SEN) <span aria-hidden="true">*</span></label>
-            <textarea id="child2-sen" name="child2_sen" rows="3" data-req></textarea>
+            <textarea id="child2-sen" name="child2_sen" maxlength="2000" rows="3" data-req></textarea>
             <p class="hint">If none, write "None".</p>
           </div>
           <div class="field-group">
@@ -772,7 +794,7 @@
           <div class="allergy-only" data-child="2" hidden>
             <div class="field-group">
               <label class="field-label" for="child2-allergies">Allergy details <span aria-hidden="true">*</span></label>
-              <textarea id="child2-allergies" name="child2_allergies" rows="3" data-req></textarea>
+              <textarea id="child2-allergies" name="child2_allergies" maxlength="2000" rows="3" data-req></textarea>
             </div>
             <div class="field-group">
               <label class="field-label" for="child2-photo">Child's photo <span aria-hidden="true">*</span></label>
@@ -787,11 +809,11 @@
           <div class="field--row">
             <div class="field">
               <label class="field-label" for="child3-name-first">First name <span aria-hidden="true">*</span></label>
-              <input type="text" id="child3-name-first" name="child3_name_first" data-req>
+              <input type="text" id="child3-name-first" name="child3_name_first" maxlength="100" data-req>
             </div>
             <div class="field">
               <label class="field-label" for="child3-name-last">Last name <span aria-hidden="true">*</span></label>
-              <input type="text" id="child3-name-last" name="child3_name_last" data-req>
+              <input type="text" id="child3-name-last" name="child3_name_last" maxlength="100" data-req>
             </div>
           </div>
           <div class="field-group">
@@ -977,21 +999,21 @@
           <div class="field--row returning-only" data-child="3" hidden>
             <div class="field">
               <label class="field-label" for="child3-current-class">Current class (25/26) <span aria-hidden="true">*</span></label>
-              <input type="text" id="child3-current-class" name="child3_current_class" data-req>
+              <input type="text" id="child3-current-class" name="child3_current_class" maxlength="100" data-req>
             </div>
             <div class="field">
               <label class="field-label" for="child3-current-teacher">Current teacher (25/26) <span aria-hidden="true">*</span></label>
-              <input type="text" id="child3-current-teacher" name="child3_current_teacher" data-req>
+              <input type="text" id="child3-current-teacher" name="child3_current_teacher" maxlength="100" data-req>
             </div>
           </div>
           <div class="field-group">
             <label class="field-label" for="child3-medical">Medical conditions <span aria-hidden="true">*</span></label>
-            <textarea id="child3-medical" name="child3_medical" rows="3" data-req></textarea>
+            <textarea id="child3-medical" name="child3_medical" maxlength="2000" rows="3" data-req></textarea>
             <p class="hint">Please specify any medication required during school hours or any medication the child may have on their belongings, such as EpiPens. If none, write "None".</p>
           </div>
           <div class="field-group">
             <label class="field-label" for="child3-sen">Special educational needs (SEN) <span aria-hidden="true">*</span></label>
-            <textarea id="child3-sen" name="child3_sen" rows="3" data-req></textarea>
+            <textarea id="child3-sen" name="child3_sen" maxlength="2000" rows="3" data-req></textarea>
             <p class="hint">If none, write "None".</p>
           </div>
           <div class="field-group">
@@ -1006,7 +1028,7 @@
           <div class="allergy-only" data-child="3" hidden>
             <div class="field-group">
               <label class="field-label" for="child3-allergies">Allergy details <span aria-hidden="true">*</span></label>
-              <textarea id="child3-allergies" name="child3_allergies" rows="3" data-req></textarea>
+              <textarea id="child3-allergies" name="child3_allergies" maxlength="2000" rows="3" data-req></textarea>
             </div>
             <div class="field-group">
               <label class="field-label" for="child3-photo">Child's photo <span aria-hidden="true">*</span></label>
@@ -1015,7 +1037,7 @@
             </div>
           </div>
         </fieldset>
-        <p><button type="button" id="add-child" class="btn btn--secondary">+ Add another child</button></p>
+        <p><button type="button" id="add-child" class="btn btn--ghost">+ Add another child</button></p>
         <fieldset>
           <legend>Parent/Guardian 1</legend>
           <div class="field-group">
@@ -1023,21 +1045,21 @@
               <div class="field--row">
                 <div class="field">
                   <label for="pg1-name-first">First name</label>
-                  <input type="text" id="pg1-name-first" name="pg1_name_first" required>
+                  <input type="text" id="pg1-name-first" name="pg1_name_first" maxlength="100" required>
                 </div>
                 <div class="field">
                   <label for="pg1-name-last">Last name</label>
-                  <input type="text" id="pg1-name-last" name="pg1_name_last" required>
+                  <input type="text" id="pg1-name-last" name="pg1_name_last" maxlength="100" required>
                 </div>
               </div>
             </div>
           <div class="field">
             <label for="pg1-email">Parent/Guardian 1 Email:</label>
-            <input type="email" id="pg1-email" name="pg1_email" required>
+            <input type="email" id="pg1-email" name="pg1_email" maxlength="254" required>
           </div>
           <div class="field">
             <label for="pg1-phone">Parent/Guardian 1 Phone:</label>
-            <input type="tel" id="pg1-phone" name="pg1_phone" required>
+            <input type="tel" id="pg1-phone" name="pg1_phone" maxlength="100" required>
           </div>
         </fieldset>
         <fieldset>
@@ -1047,21 +1069,21 @@
               <div class="field--row">
                 <div class="field">
                   <label for="pg2-name-first">First name</label>
-                  <input type="text" id="pg2-name-first" name="pg2_name_first">
+                  <input type="text" id="pg2-name-first" name="pg2_name_first" maxlength="100">
                 </div>
                 <div class="field">
                   <label for="pg2-name-last">Last name</label>
-                  <input type="text" id="pg2-name-last" name="pg2_name_last">
+                  <input type="text" id="pg2-name-last" name="pg2_name_last" maxlength="100">
                 </div>
               </div>
             </div>
           <div class="field">
             <label for="pg2-email">Parent/Guardian 2 Email:</label>
-            <input type="email" id="pg2-email" name="pg2_email">
+            <input type="email" id="pg2-email" name="pg2_email" maxlength="254">
           </div>
           <div class="field">
             <label for="pg2-phone">Parent/Guardian 2 Phone:</label>
-            <input type="tel" id="pg2-phone" name="pg2_phone">
+            <input type="tel" id="pg2-phone" name="pg2_phone" maxlength="100">
           </div>
         </fieldset>
         <fieldset>
@@ -1069,16 +1091,16 @@
           <p class="section-intro">Someone we can call if we cannot reach a parent/guardian.</p>
           <div class="field">
             <label class="field-label" for="emergency-contact-name">Full name <span aria-hidden="true">*</span></label>
-            <input type="text" id="emergency-contact-name" name="emergency_contact_name" required>
+            <input type="text" id="emergency-contact-name" name="emergency_contact_name" maxlength="100" required>
           </div>
           <div class="field--row">
             <div class="field">
               <label class="field-label" for="emergency-contact-relationship">Relationship to child(ren) <span aria-hidden="true">*</span></label>
-              <input type="text" id="emergency-contact-relationship" name="emergency_contact_relationship" required>
+              <input type="text" id="emergency-contact-relationship" name="emergency_contact_relationship" maxlength="100" required>
             </div>
             <div class="field">
               <label class="field-label" for="emergency-contact-phone">Phone <span aria-hidden="true">*</span></label>
-              <input type="tel" id="emergency-contact-phone" name="emergency_contact_phone" required>
+              <input type="tel" id="emergency-contact-phone" name="emergency_contact_phone" maxlength="100" required>
             </div>
           </div>
         </fieldset>
@@ -1087,16 +1109,16 @@
           <p class="section-intro">Other Authorised Person for regular collection (optional).</p>
           <div class="field">
             <label for="other-person-name">Full Name</label>
-            <input type="text" id="other-person-name" name="other_person_name">
+            <input type="text" id="other-person-name" name="other_person_name" maxlength="100">
           </div>
           <div class="field--row">
             <div class="field">
               <label for="other-person-relationship">Relationship to child</label>
-              <input type="text" id="other-person-relationship" name="other_person_relationship">
+              <input type="text" id="other-person-relationship" name="other_person_relationship" maxlength="100">
             </div>
             <div class="field">
               <label for="other-person-phone">Phone</label>
-              <input type="tel" id="other-person-phone" name="other_person_phone">
+              <input type="tel" id="other-person-phone" name="other_person_phone" maxlength="100">
             </div>
           </div>
         </fieldset>
@@ -1271,11 +1293,11 @@
               <div class="field--row">
                 <div class="field">
                   <label for="sig-name-first">First name</label>
-                  <input type="text" id="sig-name-first" name="sig_name_first" required>
+                  <input type="text" id="sig-name-first" name="sig_name_first" maxlength="100" required>
                 </div>
                 <div class="field">
                   <label for="sig-name-last">Last name</label>
-                  <input type="text" id="sig-name-last" name="sig_name_last" required>
+                  <input type="text" id="sig-name-last" name="sig_name_last" maxlength="100" required>
                 </div>
               </div>
             </div>

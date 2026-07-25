@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Committee-only area and server-side code — nothing here is for search engines.
+Disallow: /admin/
+Disallow: /lib/
+Disallow: /tests/
+Disallow: /docs-source/
+Disallow: /submit.php
+
+# Confirmation page: only meaningful straight after submitting the form.
+Disallow: /thank-you.html
+
+Sitemap: https://thegreekacademy.co.uk/sitemap.xml

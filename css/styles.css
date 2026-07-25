@@ -141,7 +141,9 @@ a { color: var(--sea); }
 .btn:hover { transform: translateY(-1px); }
 .btn--gold { background: var(--honey); color: var(--ink); box-shadow: 0 6px 18px rgba(232, 169, 60, 0.35); }
 .btn--gold:hover { background: var(--honey-deep); color: #fff; }
-.btn--ghost { border: 2px solid var(--aegean); color: var(--aegean); }
+/* 'background' matters because .btn--ghost is the one button style used on a <button> as well as
+   on <a> — without it the add-child button picks up the browser's default grey. */
+.btn--ghost { border: 2px solid var(--aegean); color: var(--aegean); background: transparent; }
 .btn--ghost:hover { background: var(--aegean); color: #fff; }
 .btn--white { background: #fff; color: var(--aegean); }
 .btn--white:hover { background: var(--honey); color: var(--ink); }
@@ -681,9 +683,10 @@ h2 {
 /* ---------- registration form backend wiring (2026-07-20) ---------- */
 .hp-field { position: absolute; left: -9999px; top: auto; height: 1px; overflow: hidden; }
 
+/* Short pages (thank-you, 404) otherwise leave the footer floating mid-screen on a tall display. */
+.section--short { display: flex; align-items: center; min-height: 54vh; }
+
 /* ---------- registration form: per-child sections (2026-07-23) ---------- */
-.btn--secondary { border: 2px solid var(--aegean); color: var(--aegean); background: transparent; }
-.btn--secondary:hover { background: var(--aegean); color: #fff; }
 .link-button {
   background: none;
   border: 0;
