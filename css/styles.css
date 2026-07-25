@@ -609,15 +609,39 @@ h2 {
 }
 .nav-drop a { display: block; padding: 8px 18px; }
 .nav-drop a:hover { background: var(--porcelain); }
-.nav-group:hover .nav-drop,
-.nav-group:focus-within .nav-drop,
+/* Tap/click stays the mechanism everywhere — it is the only one that works on a touch screen. */
 .nav-group__btn[aria-expanded="true"] + .nav-drop { display: block; }
+
+/* On a real pointer, the menu opens on hover and on keyboard focus.
+   Gated on (hover: hover) so a phone or tablet never gets a menu pinned open by a stray
+   :hover that latched on tap — those devices keep the click behaviour above. */
+@media (hover: hover) and (min-width: 681px) {
+  /* Undo a click that left aria-expanded="true": without this the panel stays pinned open
+     after the pointer moves away. Must precede the rules below, which have equal specificity
+     and are meant to win while hovered or focused. */
+  .nav-group__btn[aria-expanded="true"] + .nav-drop { display: none; }
+
+  .nav-group:hover .nav-drop,
+  .nav-group:focus-within .nav-drop { display: block; }
+
+  /* .nav-drop sits 10px below the button, and that gap belongs to neither element. Travelling
+     down to the panel crossed dead space, :hover dropped and the menu shut before it could be
+     used — which is why selecting an item needed a click. This spans the gap so the pointer
+     never leaves .nav-group. Only present while open, so it obstructs nothing otherwise. */
+  .nav-group:hover::after,
+  .nav-group:focus-within::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 12px;
+  }
+}
 @media (max-width: 680px) {
   .nav-group { width: 100%; }
   .nav-drop { position: static; box-shadow: none; border: 0;
     border-left: 3px solid var(--honey); border-radius: 0; padding: 4px 0 4px 14px; }
-  .nav-group:hover .nav-drop { display: none; }
-  .nav-group__btn[aria-expanded="true"] + .nav-drop { display: block; }
 }
 /* -- policy pages: numbered rule lists inside .notes cards -- */
 .notes ol { margin: 14px 0 0 18px; display: grid; gap: 10px; font-size: 0.97rem; }
