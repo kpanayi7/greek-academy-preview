@@ -135,6 +135,13 @@ a { color: var(--sea); }
   font-weight: 700;
   border-bottom-color: var(--honey);
 }
+/* The nav CTA is both .btn and .main-nav a, and the latter is the more specific selector — so
+   `padding: 6px 0` was winning and the gold pill had no side padding at all, hugging its text.
+   Restore button padding for the CTA only, leaving the plain nav links alone. */
+.main-nav a.btn {
+  padding: 10px 22px;
+  border-bottom: 0;
+}
 
 .btn {
   display: inline-block;
