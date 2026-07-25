@@ -232,6 +232,8 @@ a { color: var(--sea); }
 
 /* ---------- sections ---------- */
 .section { padding: 84px 0; }
+/* For a section carrying a single line — the full 84px would leave it stranded. */
+.section--slim { padding: 44px 0 48px; }
 .section--tint { background: var(--porcelain); }
 .section--navy { background: var(--aegean); color: #DAE6F7; }
 .section--navy h2 { color: #fff; }
@@ -651,6 +653,30 @@ h2 {
 
 /* ---------- forms ---------- */
 .form-card { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 34px; max-width: 760px; margin: 34px auto 0; box-shadow: 0 10px 30px rgba(16, 30, 51, 0.10); }
+/* The heading above the card is centred; the card itself must stay left-aligned or every
+   field label inherits the centring. */
+.center .form-card { text-align: left; }
+/* Registration cut-off. Borrows the amber "this one matters" treatment from .consent-gate so the
+   date reads as a deadline rather than as another line of intro copy. */
+.deadline-note {
+  display: inline-block;
+  padding: 14px 26px;
+  background: #FFF8EC;
+  border: 1px solid #F0D9A8;
+  border-left: 4px solid var(--honey);
+  border-radius: 14px;
+  font-size: 1.08rem;
+  color: var(--ink);
+}
+.deadline-note strong { white-space: nowrap; }
+/* Breathing room before the next fieldset — the button sat almost on top of "Parent/Guardian 1". */
+.add-child-row { margin: 6px 0 46px; }
+/* The GCSE footnote explains a real extra cost, so it should not read as quiet small print. */
+.hint--note { font-weight: 700; color: var(--ink); }
+/* Segments sit in a wrapping row rather than one run of text, so "Tel: 07398 904 535" and the
+   email each stay whole instead of breaking mid-number, with no separator stranded on a new line. */
+.contact-line { display: flex; flex-wrap: wrap; gap: 2px 18px; }
+.contact-line .nb { white-space: nowrap; }
 .form-card fieldset { border: 0; padding: 0; margin: 0 0 26px; }
 .form-card legend { font-family: "GFS Didot", serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 14px; }
 .field { margin-bottom: 16px; }
@@ -669,7 +695,18 @@ h2 {
 .radio-group { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; }
 .radio-group input[type="radio"], .radio-group input[type="checkbox"] { width: auto; margin-right: 6px; }
 .radio-group label { display: inline; font-weight: 400; margin-bottom: 0; color: var(--body-c); }
-.radio-group--stacked { flex-direction: column; align-items: flex-start; gap: 10px; }
+/* Each input and its label are siblings, not a wrapped pair, so a column flexbox made every one
+   of them its own row — putting each radio ABOVE its own text. A two-column grid pairs input
+   with label instead: box in column one, wording beside it, one option per row. */
+.radio-group--stacked {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 12px 10px;
+}
+.radio-group--stacked input[type="radio"],
+.radio-group--stacked input[type="checkbox"] { margin: 3px 0 0; }
+.radio-group--stacked label { line-height: 1.45; }
 .radio-group--stacked + .hint { margin-top: 16px; }
 /* required-field marker — scoped so it can't reach the nav carets, which share aria-hidden */
 .form-card .field-label span[aria-hidden="true"],
