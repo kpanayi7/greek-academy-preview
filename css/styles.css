@@ -26,6 +26,13 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* The browser hides [hidden] with display:none, but that comes from the UA stylesheet and any
+   class setting display beats it — .field--row's `display: grid` was leaving the returning-pupil
+   class/teacher row on screen for every parent. Restore the attribute's meaning globally so
+   markup can rely on it. registration.js toggles the property, never style.display, so this is
+   safe: once hidden is false the rule stops matching and the layout rule applies as normal. */
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; }
 
 body {
