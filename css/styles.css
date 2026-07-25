@@ -660,6 +660,28 @@ h2 {
 .gallery-grid img { width: 100%; height: 240px; object-fit: cover; border-radius: 12px; display: block; }
 @media (max-width: 640px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } .gallery-grid img { height: 150px; } }
 
+/* ---------- contact map ---------- */
+/* A self-hosted image built from OpenStreetMap tiles, not a live embed. OSM's iframe now needs
+   WebGL and shows an error box on older tablets; a Google Maps iframe works but sets tracking
+   cookies before any parent has consented, against the school's own GDPR policy. An image makes
+   no third-party request at all. Rebuild with tools/greek-academy-static-map.php if it moves. */
+.map-embed {
+  margin-top: 28px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.map-embed img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;   /* the school sits at the centre of the source image, so cropping is safe */
+}
+@media (max-width: 640px) { .map-embed img { height: 300px; } }
+.map-links { margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+.map-attrib { margin-top: 12px; font-size: 0.85rem; color: var(--muted); }
+
 /* ---------- term dates table ---------- */
 .term-table {
   width: 100%;
