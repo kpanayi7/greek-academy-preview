@@ -26,6 +26,14 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Pairs with js/protect.js: blocks drag-to-desktop and the iOS long-press "Save Image" sheet,
+   which the JS contextmenu handler alone does not cover. A deterrent, not a safeguarding
+   control — see the note at the top of protect.js. */
+img {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
+
 /* The browser hides [hidden] with display:none, but that comes from the UA stylesheet and any
    class setting display beats it — .field--row's `display: grid` was leaving the returning-pupil
    class/teacher row on screen for every parent. Restore the attribute's meaning globally so

@@ -24,6 +24,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Greek Academy logo">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noimageindex">
 </head>
 <body>
 
@@ -181,5 +182,6 @@ var io = new IntersectionObserver(function (entries) {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 </script>
+<script src="js/protect.js" defer></script>
 </body>
 </html>
