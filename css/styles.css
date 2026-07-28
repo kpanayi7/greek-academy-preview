@@ -791,6 +791,19 @@ h2 {
 /* ---------- registration form backend wiring (2026-07-20) ---------- */
 .hp-field { position: absolute; left: -9999px; top: auto; height: 1px; overflow: hidden; }
 
+/* ---------- gallery albums (2026-07-28) ---------- */
+/* Jump links in the gallery hero. With 200+ photos across five albums, landing on the page
+   without a way to skip ahead means scrolling past a hundred images to reach Halloween. */
+.album-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.album-links a { display: inline-block; padding: 7px 15px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.92rem; font-weight: 700; text-decoration: none; color: var(--ink); background: var(--paper); }
+.album-links a:hover, .album-links a:focus { background: var(--honey); border-color: var(--honey); color: var(--ink); }
+/* Anchored sections would otherwise sit under the sticky header when jumped to. */
+section[id] { scroll-margin-top: 90px; }
+/* Named classes: a parent's first instinct is to find their own child's class, so these
+   carry a caption. The event albums stay uncaptioned — 200 identical labels are noise. */
+.gallery-grid--labelled figure { margin: 0; }
+.gallery-grid--labelled figcaption { margin-top: 8px; font-weight: 700; font-size: 0.94rem; color: var(--ink); text-align: center; }
+
 /* ---------- contact form (2026-07-28) ---------- */
 /* Off-screen but still read aloud — the required-field asterisk means nothing to a screen
    reader, so the intro spells it out for one and hides it from the other. */
