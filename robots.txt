@@ -7,8 +7,10 @@ Disallow: /lib/
 Disallow: /tests/
 Disallow: /docs-source/
 Disallow: /submit.php
+Disallow: /contact.php
 
-# Confirmation page: only meaningful straight after submitting the form.
+# Confirmation pages: only meaningful straight after submitting a form.
 Disallow: /thank-you.html
+Disallow: /message-sent.html
 
 Sitemap: https://thegreekacademy.co.uk/sitemap.xml
